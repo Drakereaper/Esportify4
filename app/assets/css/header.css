@@ -1,0 +1,38 @@
+body {
+    background: linear-gradient(120deg, #020024, #00d4ff) !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+.carousel-inner {
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.8rem;
+    justify-self: center;
+    box-shadow: 0 0 20px rgba(0, 224, 255, 0.8), 0 6px 18px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-control-prev {
+    left: 22% !important;
+}
+
+.carousel-control-next {
+    right: 22% !important;
+}
+
+#titrehistory {
+    font-family: Orbitron, sans-serif;
+    color: #00ffff;
+    text-shadow: 0 0 12px #00ffff;
+}
+
+#divtitre {
+    margin-top: 6.25rem;
+}
+
+p {
+    color: #b8dfff;
+    font-family: poppins, sans-serif;
+}

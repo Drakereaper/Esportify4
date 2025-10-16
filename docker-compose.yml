@@ -1,0 +1,37 @@
+services:
+  nginx:
+    image: nginx:stable-alpine3.21
+    container_name: nginx_esportify
+    ports:
+      - "8080:80"
+    volumes:
+      - ./app:/var/www/public
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+      - php
+
+  php:
+    image: php:8.3.27RC1-fpm-alpine3.21
+    container_name: php_esportify
+    volumes:
+      - ./app:/var/www/public
+
+  db:
+    image: mysql:8.0.43-debian
+    container_name: db_esportify
+    environment: 
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+    volumes: 
+      - db_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin_esportify
+    environment:
+      PMA_HOST: db
+    ports:
+      - 8081:80
+
+volumes:
+  db_data:
