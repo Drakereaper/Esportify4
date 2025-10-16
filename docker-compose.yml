@@ -7,6 +7,7 @@ services:
     volumes:
       - ./app:/var/www/public
       - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./api:/var/www/api
     depends_on:
       - php
 
@@ -15,6 +16,7 @@ services:
     container_name: php_esportify
     volumes:
       - ./app:/var/www/public
+      - ./api:/var/www/api
 
   db:
     image: mysql:8.0.43-debian
@@ -22,8 +24,13 @@ services:
     environment: 
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
       MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${db_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
     volumes: 
       - db_data:/var/lib/mysql
+      - ./sql:/docker-entrypoint-initdb.d:ro
+    ports:
+      - 3307:3306
 
   phpmyadmin:
     image: phpmyadmin:latest

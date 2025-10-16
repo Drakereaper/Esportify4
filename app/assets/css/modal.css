@@ -1,0 +1,141 @@
+:root {
+    --neon-blue: #00e0ff;
+    --dark-blue: #00223d;
+    --text-dark: #001018;
+    --text-light: #fff;
+}
+
+.esportify-modal {
+    background: linear-gradient(145deg, var(--dark-blue), #00325a, #004a80);
+    color: var(--text-light);
+    border-radius: 16px;
+    border: 1px solid rgba(0, 238, 255, 0.12);
+    box-shadow: 0 12px 40px rgba(0, 238, 255, 0.18), 0 6px 18px rgba(0, 0, 0, 0.4);
+    font-family: Poppins, sans-serif;
+}
+
+.esportify-modal .modal-title {
+    font-family: Orbitron, sans-serif;
+    letter-spacing: .5px;
+    color: var(--text-light);
+    filter: drop-shadow(0 0 6px rgba(0, 238, 255, .25));
+}
+
+.esportify-modal .btn-close {
+    filter: invert(1);
+    opacity: .8;
+}
+
+.esportify-modal .btn-close:hover {
+    opacity: 1;
+}
+
+.modal.fade .modal-dialog {
+    transform: translate3d(0, 0, 0) scale(1);
+}
+
+.modal-backdrop.show {
+    background: radial-gradient(ellipse at center, rgba(0, 34, 61, .7), rgba(0, 0, 0, .85));
+    backdrop-filter: blur(2px);
+}
+
+.form-control-esportify,
+.form-select.form-control-esportify {
+    background: rgba(255, 255, 255, .07);
+    border: 1px solid rgba(255, 255, 255, .18);
+    color: var(--text-light);
+    border-radius: 12px;
+    padding: .7rem .9rem;
+    outline: none;
+    transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.form-control-esportify::placeholder {
+    color: rgba(255, 255, 255, .55);
+}
+
+.form-control-esportify:focus,
+.form-select.form-control-esportify:focus {
+    background: rgba(0, 238, 255, .10);
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 0 3px rgba(0, 238, 255, .18);
+    color: var(--text-light);
+}
+
+.btn-esportify {
+    background: linear-gradient(135deg, var(--neon-blue), #00b3ff);
+    color: var(--text-dark);
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    padding: .65rem 1.2rem;
+    letter-spacing: .4px;
+    transition: transform .15s ease, box-shadow .2s ease, filter .2s ease;
+}
+
+.btn-esportify:hover {
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 0 18px rgba(0, 238, 255, .35);
+    filter: brightness(1.05); 
+}
+
+.btn-secondary-esportify {
+    background: rgba(255, 255, 255, .12);
+    color: var(--text-light);
+    border: 1px solid rgba(255, 255, 255, .18);
+    border-radius: 12px;
+    padding: .55rem 1rem;
+}
+
+.btn-secondary-esportify:hover {
+    background: rgba(255, 255, 255, .18);
+}
+
+#registerMessage .alert-success {
+    background: rgba(40, 167, 69, .18);
+    border: 1px solid rgba(40, 167, 69, .35);
+    color: #bdf0c9;
+    border-radius: 10px;
+}
+
+.select-esportify {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    background: rgba(255, 255, 255, .07);
+    border: 1px solid rgba(255, 255, 255, .18);
+    color: var(--text-light);
+    border-radius: 12px;
+    padding: .7rem 2.8rem .7rem .9rem;
+    line-height: 1.25;
+    cursor: pointer;
+    background-image: linear-gradient(transparent,transparent), url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='%2300e0ff'><path d='M7 10l5 5 5-5'/></svg>");
+    background-repeat: no-repeat, no-repeat;
+    background-position: right 12px center, 0 0;
+    background-size: 18px, auto;
+}
+
+.select-esportify:hover {
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 0 2px rgba(0, 238, 255, .12);
+}
+
+.select-esportify:focus {
+    outline: none;
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 0 3px rgba(0, 238, 255, .18);
+    background-color: rgba(0, 238, 255, .10);
+}
+
+.select-esportify::-ms-expand { display: none; }
+
+.select-esportify option {
+    background: #05223d;
+    color: var(--text-light);
+}
+
+@media (max-width: 576px) {
+    .modal-dialog.modal-lg { max-width: 95%; }
+    .esportify-modal {border-radius: 14px; }
+}
